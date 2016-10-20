@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ product_name }}{% endblock %}
+
+{% block body_block %}
+    <h1><strong>Products Recorded </strong></h1>
+          {% if products %}
+            <ul>
+                {% for product in products %}
+                 <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="{{ product_list}}">{{ product.category }} : {{ product }}</a></li><br/>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no products.</strong>
+        {% endif %}
+{% endblock %}

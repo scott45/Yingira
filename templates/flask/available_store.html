@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ store_name }}{% endblock %}
+
+{% block body_block %}
+    <h1><strong>Available Stores</strong></h1>
+          {% if stores %}
+            <ul>
+                {% for store in stores %}
+                 <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="{{ store_list}}">{{ store }}</a></li><br/>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no stores.</strong>
+        {% endif %}
+{% endblock %}
