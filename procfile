@@ -1,1 +1,1 @@
-web: gunicorn secret.wsgi
+web: gunicorn enter.wsgi
